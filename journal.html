@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal & Tasks - Friend AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="chat-nav">
+            <div class="chat-nav-left">
+                <div class="menu-container">
+                    <button id="menuBtn" class="menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="menu-dropdown">
+                        <button id="logoutBtn" class="menu-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+                <img src="images/logo.png" alt="AI Friend Logo">
+                <span class="chat-title" id="aiName">Friend</span>
+            </div>
+            <div class="chat-nav-right">
+                <a href="chat.html" class="nav-button">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="mood-tracker.html" class="nav-button">
+                    <i class="fas fa-chart-line"></i> Mood Tracker
+                </a>
+                <a href="journal.html" class="nav-button active">
+                    <i class="fas fa-book"></i> Journal & Tasks
+                </a>
+                <a href="selfcare.html" class="nav-button">
+                    <i class="fas fa-heart"></i> Self Care
+                </a>
+                <button id="darkModeToggle" class="nav-button">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+            </div>
+        </nav>
+
+        <main class="journal-page">
+            <div class="journal-content">
+                <div class="journal-grid">
+                    <div class="journal-section">
+                        <h2>Daily Journal</h2>
+                        <div class="journal-input">
+                            <textarea id="journalEntry" placeholder="Write your thoughts, feelings, and experiences..."></textarea>
+                            <button id="saveJournalBtn">Save Entry</button>
+                        </div>
+                        <div class="journal-history">
+                            <h3>Recent Entries</h3>
+                            <div id="journalEntries" class="entries-list">
+                                <!-- Journal entries will be added here -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tasks-section">
+                        <div class="ai-suggestions">
+                            <h2>AI Task Suggestions</h2>
+                            <div class="ai-insights">
+                                <p class="placeholder-text">Save a journal entry to get personalized task suggestions.</p>
+                            </div>
+                        </div>
+
+                        <div class="todo-list">
+                            <h2>To-Do List</h2>
+                            <div class="add-task">
+                                <input type="text" id="newTask" placeholder="Add a new task...">
+                                <button id="addTaskBtn"><i class="fas fa-plus"></i></button>
+                            </div>
+                            <ul id="tasksList">
+                                <!-- Tasks will be added here -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/gemini-integration.js"></script>
+    <script type="module" src="js/journal.js"></script>
+    <script type="module" src="js/features.js"></script>
+</body>
+</html> 

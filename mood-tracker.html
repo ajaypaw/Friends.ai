@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker - Friend AI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="chat-nav">
+            <div class="chat-nav-left">
+                <div class="menu-container">
+                    <button id="menuBtn" class="menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="menu-dropdown">
+                        <button id="logoutBtn" class="menu-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+                <img src="images/logo.png" alt="AI Friend Logo">
+                <span class="chat-title" id="aiName">Friend</span>
+            </div>
+            <div class="chat-nav-right">
+                <a href="chat.html" class="nav-button">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="mood-tracker.html" class="nav-button active">
+                    <i class="fas fa-chart-line"></i> Mood Tracker
+                </a>
+                <a href="journal.html" class="nav-button">
+                    <i class="fas fa-book"></i> Journal & Tasks
+                </a>
+                <a href="selfcare.html" class="nav-button">
+                    <i class="fas fa-heart"></i> Self Care
+                </a>
+                <button id="darkModeToggle" class="nav-button">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+            </div>
+        </nav>
+
+        <main class="mood-tracker-page">
+            <div class="mood-tracker-grid">
+                <div class="mood-input-section">
+                    <h2>How are you feeling today?</h2>
+                    <div class="mood-buttons">
+                        <button class="mood-btn" data-mood="great" data-value="5">😊</button>
+                        <button class="mood-btn" data-mood="good" data-value="4">🙂</button>
+                        <button class="mood-btn" data-mood="okay" data-value="3">😐</button>
+                        <button class="mood-btn" data-mood="bad" data-value="2">😔</button>
+                        <button class="mood-btn" data-mood="awful" data-value="1">😢</button>
+                    </div>
+                    <div class="mood-notes">
+                        <textarea id="moodNotes" placeholder="Add notes about your mood..."></textarea>
+                        <button id="saveMoodBtn">Save Mood</button>
+                    </div>
+                </div>
+
+                <div class="mood-analytics">
+                    <div class="ai-insights-container">
+                        <h2>AI Insights & Recommendations</h2>
+                        <div class="ai-insights">
+                            <p class="placeholder-text">Save your mood to get personalized insights and recommendations.</p>
+                        </div>
+                    </div>
+
+                    <div class="mood-chart-container">
+                        <h2>Your Mood History</h2>
+                        <canvas id="moodChart"></canvas>
+                    </div>
+                    
+                    <div class="mood-stats">
+                        <div class="stat-item">
+                            <span class="stat-label">Weekly Average</span>
+                            <span class="stat-value" id="weeklyAverage">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Most Common Mood</span>
+                            <span class="stat-value" id="commonMood">-</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-label">Total Entries</span>
+                            <span class="stat-value" id="totalEntries">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mood-history">
+                    <h2>Recent Entries</h2>
+                    <div id="moodEntries" class="mood-entries-list">
+                        <!-- Mood entries will be added here -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/gemini-integration.js"></script>
+    <script type="module" src="js/mood-tracker.js"></script>
+    <script type="module" src="js/features.js"></script>
+</body>
+</html> 

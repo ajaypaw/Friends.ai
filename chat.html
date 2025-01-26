@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Your AI Friend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <nav class="chat-nav">
+            <div class="chat-nav-left">
+                <div class="menu-container">
+                    <button id="menuBtn" class="menu-button">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="menu-dropdown">
+                        <button id="logoutBtn" class="menu-item">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                        <!-- Add more menu items here if needed -->
+                    </div>
+                </div>
+                <img src="images/logo.png" alt="AI Friend Logo">
+                <span class="chat-title" id="aiName">Friend</span>
+            </div>
+            <div class="chat-nav-right">
+                <a href="chat.html" class="nav-button active">
+                    <i class="fas fa-comments"></i> Chat
+                </a>
+                <a href="mood-tracker.html" class="nav-button">
+                    <i class="fas fa-chart-line"></i> Mood Tracker
+                </a>
+                <a href="journal.html" class="nav-button">
+                    <i class="fas fa-book"></i> Journal & Tasks
+                </a>
+                <a href="selfcare.html" class="nav-button">
+                    <i class="fas fa-heart"></i> Self Care
+                </a>
+                <button id="darkModeToggle" class="nav-button">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="toggleSpeech" class="nav-button">
+                    <i class="fas fa-volume-up"></i>
+                </button>
+                <span id="userName"></span>
+                <a href="index.html" class="back-home">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+            </div>
+        </nav>
+        
+        <div class="chat-content">
+            <div class="chat-sidebar">
+                <div class="mood-tracker">
+                    <h3>Current Mood</h3>
+                    <div class="mood-buttons">
+                        <button class="mood-btn" data-mood="great" data-value="5">😊</button>
+                        <button class="mood-btn" data-mood="good" data-value="4">🙂</button>
+                        <button class="mood-btn" data-mood="okay" data-value="3">😐</button>
+                        <button class="mood-btn" data-mood="bad" data-value="2">😔</button>
+                        <button class="mood-btn" data-mood="awful" data-value="1">😢</button>
+                    </div>
+                </div>
+
+                <div class="quick-resources">
+                    <h3>Resources</h3>
+                    <button class="resource-btn">
+                        <i class="fas fa-heart"></i> Self-Care Tips
+                        <span class="ripple"></span>
+                    </button>
+                    <button class="resource-btn">
+                        <i class="fas fa-lungs"></i> Breathing Exercises
+                    </button>
+                    <button class="resource-btn">
+                        <i class="fas fa-book"></i> Mental Health Guide
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-main">
+                <div id="chatBox" class="chat-messages">
+                    <!-- Messages will be added here -->
+                    <div class="typing-indicator" style="display: none;">
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                        <div class="typing-dot"></div>
+                    </div>
+                </div>
+                
+                <div class="chat-input-container">
+                    <div class="chat-input-wrapper">
+                        <input type="text" id="userInput" placeholder="Type your message..." autocomplete="off">
+                        <div class="input-buttons">
+                            <button id="micBtn" class="mic-button">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <button id="sendBtn">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="chat-suggestions">
+                        <button class="suggestion-chip">I am feeling happy</button>
+                        <button class="suggestion-chip">I need someone to talk to</button>
+                        <button class="suggestion-chip">I'm feeling anxious</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="auth.js"></script>
+    <script src="config.js"></script>
+    <script src="chat.js"></script>
+    <script type="module" src="js/features.js"></script>
+    <script>
+        // Get customized AI name
+        document.addEventListener('DOMContentLoaded', function() {
+            const aiName = localStorage.getItem('aiName') || 'Friend';
+            document.getElementById('aiName').textContent = aiName;
+        });
+    </script>
+    <script type="module" src="gemini-integration.js"></script>
+</body>
+</html>

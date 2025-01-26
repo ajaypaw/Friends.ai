@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Your AI Friend</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <div class="auth-header">
+                <img src="images/logo.png" alt="AI Friend Logo">
+                <h1>Welcome Back My Friend</h1>
+                <p class="subtitle">Continue your journey with your AI companion</p>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter your password">
+                </div>
+                <button type="submit" class="auth-button">Login</button>
+            </form>
+            <p class="auth-switch">
+                Don't have an account? <a href="signup.html">Sign up here</a>
+            </p>
+        </div>
+    </div>
+    <script>
+        // Get customized AI name
+        document.addEventListener('DOMContentLoaded', function() {
+            const aiName = localStorage.getItem('aiName') || 'Friend';
+            document.getElementById('aiName').textContent = aiName;
+        });
+    </script>
+    <script src="auth.js"></script>
+</body>
+</html>
