@@ -1,5 +1,5 @@
 const config = {
-    geminiApiKey: "AIzaSyBI7nlqTyQPwvcVPxhowel5R1H-8iJ_ZQY"  // This is just an example, use your actual key
+    geminiApiKey: "AIzaSyAutbg39jUvF0Pq5wsWSVSMr_yZAQzH-dU"  // This is just an example, use your actual key
 };
 
 export default config; 
