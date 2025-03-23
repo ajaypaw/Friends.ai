@@ -1,2 +1,2 @@
 // Replace this with your actual Gemini API key
-const GEMINI_API_KEY = 'AIzaSyC32KlH16kbLZ5DB4zM0OJd_5QKGfDfl6U';
+const GEMINI_API_KEY = 'AIzaSyAutbg39jUvF0Pq5wsWSVSMr_yZAQzH-dU';
